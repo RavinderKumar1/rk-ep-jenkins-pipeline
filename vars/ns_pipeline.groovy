@@ -2657,6 +2657,7 @@ def github_create_tag(String tag, String base_url, String commit) {
 }
 
 def get_repo_map(){
+    println("In get_repo_map function")
     if(GIT_URLS == null) {
         def giturls_as_text = readFile "config/github-urls.yml"
         println(giturls_as_text)
