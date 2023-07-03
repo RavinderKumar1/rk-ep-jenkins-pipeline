@@ -2666,7 +2666,8 @@ def get_repo_map(){
         println("GIT URLS are:")
         println(GIT_URLS)
     }
-    //return GIT_URLS["repoMap"]
+    def repomap =  GIT_URLS["repoMap"]
+        println(repomap.getClass())
 }
 
 def create_tag(String tag, String repo, String commit) {
