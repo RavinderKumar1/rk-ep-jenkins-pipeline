@@ -7,7 +7,6 @@ def webui_branch = null
 def webui_url = null
 def dataplane_url = null
 def dataplane_branch = null
-def ns_pipeline
 def slack_channel = "#develop-builds"
 def drone_build_repos = [
     "cci",
