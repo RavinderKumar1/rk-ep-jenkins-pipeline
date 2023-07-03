@@ -7,7 +7,7 @@
 ---
 
 repoMap:
-  adaptors: https://api.github.com/repos/netSkope/adaptors/
+  adaptors: https://api.github.com/repos/netSkope/adaptors-rk-changed/
   anti-mal-content: https://gitlab.netskope.com/api/v4/projects/44/
   app-info: https://api.github.com/repos/netSkope/app-info/
   app-meta: https://gitlab.netskope.com/api/v4/projects/7/
