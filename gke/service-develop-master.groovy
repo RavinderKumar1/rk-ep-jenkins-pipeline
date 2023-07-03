@@ -34,7 +34,7 @@ pipeline {
         stage('Get Repo map') {
             steps {
                 script {
-                    ns_pipeline.is_develop_job()
+                    ns_pipeline.get_repo_map()
                 }
             }
         }
