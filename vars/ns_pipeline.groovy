@@ -2662,7 +2662,8 @@ def get_repo_map(){
         def giturls_as_text = readFile "config/github-urls.yml"
         println(giturls_as_text)
         GIT_URLS = readYaml text: giturls_as_text
-        println("GIT URLS are")
+        println(GIT_URLS.getClass())
+        println("GIT URLS are:")
         println(GIT_URLS)
     }
     //return GIT_URLS["repoMap"]
