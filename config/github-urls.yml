@@ -1,0 +1,39 @@
+########################################################################
+#
+# To sort the keys in place, use
+#     "yq -I 2 -i -P 'sort_keys(.repoMap)' github-urls.yml"
+#
+########################################################################
+---
+
+repoMap:
+  adaptors: https://api.github.com/repos/netSkope/adaptors/
+  anti-mal-content: https://gitlab.netskope.com/api/v4/projects/44/
+  app-info: https://api.github.com/repos/netSkope/app-info/
+  app-meta: https://gitlab.netskope.com/api/v4/projects/7/
+  appicons: https://gitlab.netskope.com/api/v4/projects/24/
+  cci: https://api.github.com/repos/netSkope/cci/
+  client: https://api.github.com/repos/netSkope/client/
+  conductorservice: https://api.github.com/repos/netSkope/conductorservice/
+  content: https://api.github.com/repos/netSkope/content/
+  cronservice: https://api.github.com/repos/netSkope/cronservice/
+  data-eng: https://api.github.com/repos/netSkope/data-eng/
+  dataplane: https://api.github.com/repos/netSkope/dataplane/
+  discoverygatekeeper: https://api.github.com/repos/netSkope/discoverygatekeeper/
+  dlp-kube-service: https://api.github.com/repos/netSkope/dlp-kube-service/
+  eventforwarder: https://api.github.com/repos/netSkope/event-forwarder/
+  eventservice: https://api.github.com/repos/netSkope/eventservice/
+  infrastructure: https://api.github.com/repos/netSkope/infrastructure/
+  irm: https://api.github.com/repos/netSkope/irm/
+  malware-info: https://api.github.com/repos/netSkope/malware-info/
+  npa_core: https://api.github.com/repos/netSkope/npa_core/
+  ns-docker-base-images: https://api.github.com/repos/netSkope/ns-docker-base-images/
+  pollmonitor: https://api.github.com/repos/netSkope/pollmonitor/
+  query-engine: https://api.github.com/repos/netSkope/query-engine/
+  sandbox: https://api.github.com/repos/netSkope/sandbox/
+  secure-assessment: https://gitlab.netskope.com/api/v4/projects/96/
+  service: https://api.github.com/repos/netSkope/service/
+  suricata-inline: https://api.github.com/repos/netSkope/suricata-inline/
+  tokenservice: https://api.github.com/repos/netSkope/tokenservice/
+  webcat-remap: https://api.github.com/repos/netSkope/webcat-remap/
+  webui: https://api.github.com/repos/netSkope/webui/
