@@ -18,9 +18,7 @@ def drone_build_repos = [
 ]
 
 pipeline {
-    agent {
-        label "${AGENT_LABEL}"
-    }
+    agent any
     environment {
         BRANCH_TYPE = "develop"
         NS_BUILD_DIR = "${env.WORKSPACE}"
