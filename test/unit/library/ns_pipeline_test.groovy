@@ -17,7 +17,7 @@ class NsPipelineTest extends BasePipelineTest {
     void setUp() {
         super.setUp()
         // load ns_pipeline library
-        println("loading ns_pipeline groovy script"
+        println("loading ns_pipeline groovy script")
         nsPipeline = loadScript("vars/ns_pipeline.groovy")
     }
 
