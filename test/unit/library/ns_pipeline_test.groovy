@@ -31,7 +31,7 @@ class NsPipelineTest extends BasePipelineTest {
         addParam('WORKSPACE', 'MOCK_WORKSPACE')
         println("Calling get repo map from test function")
         printCallStack()
-        nsPipeline.get_repo_map()
+        ns_pipeline.get_repo_map()
         //assertEquals "output:", 'https://api.github.com/repos/netSkope/service/', output
     }
 }
