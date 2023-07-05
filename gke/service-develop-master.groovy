@@ -38,5 +38,10 @@ pipeline {
                 }
             }
         }
+        stage('Run Gradle test') {
+            steps {
+                sh './gradlew test'
+            }
+        }
     }
 }
