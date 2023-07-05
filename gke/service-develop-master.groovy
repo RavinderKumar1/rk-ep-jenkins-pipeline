@@ -17,7 +17,7 @@ def drone_build_repos = [
 ]
 
 pipeline {
-    agent gcp-slave
+    agent { label 'gcp-slave' }
     environment {
         BRANCH_TYPE = "develop"
         NS_BUILD_DIR = "${env.WORKSPACE}"
