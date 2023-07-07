@@ -1,6 +1,6 @@
 @Library('ns_pipeline_library') _
 
-node {
+node ('gcp-slave'){
     stage('Test library function') {
         /*
             Description - Check default artifactory
