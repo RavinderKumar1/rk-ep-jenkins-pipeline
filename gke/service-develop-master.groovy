@@ -32,7 +32,7 @@ node ('gcp-slave'){
              E output    - OVERRIDDEN_ARTIFACTORY
         */
         env.setProperty("DEFAULT_ARTIFACTORY", 'OVERRIDDEN_ARTIFACTORY')
-        def _overridden_rtf = nsPipeline.get_default_artifactory()
+        def _overridden_rtf = ns_pipeline.get_default_artifactory()
         echo "overridden artifactory: ${_overridden_rtf}"
 
 
