@@ -31,9 +31,17 @@ node ('gcp-slave'){
              Input       - DEFAULT_ARTIFACTORY:OVERRIDDEN_ARTIFACTORY
              E output    - OVERRIDDEN_ARTIFACTORY
         */
-        env.setProperty('DEFAULT_ARTIFACTORY', 'OVERRIDDEN_ARTIFACTORY')
-        def _overridden_rtf = ns_pipeline.get_default_artifactory()
+        env.setProperty("DEFAULT_ARTIFACTORY", 'OVERRIDDEN_ARTIFACTORY')
+        def _overridden_rtf = nsPipeline.get_default_artifactory()
         echo "overridden artifactory: ${_overridden_rtf}"
+
+
+        properties([
+                parameters([
+                        booleanParam(name: 'DEPLOY_SHA', defaultValue: false),
+                ])
+        ]) 
+        echo "param value: ${DEPLOY_SHA}"
 //        def repo_maps = ns_pipeline.get_repo_map()
 //        echo "repo maps: ${repo_maps}"
     }
