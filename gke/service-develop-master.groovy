@@ -1,6 +1,12 @@
 @Library('ns_pipeline_library') _
 
 node ('gcp-slave'){
+
+    stage('git checkout') {
+        git branch: 'main',
+                url: 'git@github.com:RavinderKumar1/rk-ep-jenkins-pipeline.git'
+    }
+    
     stage('Test library function') {
         /*
             Description - Check default artifactory
