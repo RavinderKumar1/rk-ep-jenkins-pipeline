@@ -41,7 +41,7 @@ node ('gcp-slave'){
                         string(name: 'color', defaultValue: 'blue', description: 'The build color')
                 ])
         ])
-        print "param value: " + this.param.color
+        print "param value: " + this.params.color
 //        def repo_maps = ns_pipeline.get_repo_map()
 //        echo "repo maps: ${repo_maps}"
     }
