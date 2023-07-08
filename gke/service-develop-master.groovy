@@ -4,7 +4,7 @@ node ('gcp-slave'){
 
     stage('git checkout') {
         git branch: 'main',
-                url: 'git@github.com:RavinderKumar1/rk-ep-jenkins-pipeline.git'
+                url: 'https://github.com/RavinderKumar1/rk-ep-jenkins-pipeline.git'
     }
     
     stage('Test library function') {
