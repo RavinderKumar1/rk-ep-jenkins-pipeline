@@ -2660,14 +2660,9 @@ def get_repo_map(){
     println("In get_repo_map function")
     if(GIT_URLS == null) {
         def giturls_as_text = readFile "config/github-urls.yml"
-        println(giturls_as_text)
         GIT_URLS = readYaml text: giturls_as_text
-        println(GIT_URLS.getClass())
-        println("GIT URLS are:")
-        println(GIT_URLS)
     }
-    def repomap =  GIT_URLS["repoMap"]
-        println(repomap.getClass())
+    return GIT_URLS["repoMap"]
 }
 
 def create_tag(String tag, String repo, String commit) {
