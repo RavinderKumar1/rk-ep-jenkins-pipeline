@@ -38,10 +38,10 @@ node ('gcp-slave'){
 
         properties([
                 parameters([
-                        booleanParam(name: 'DEPLOY_SHA', defaultValue: false),
+                        string(name: 'color', defaultValue: 'blue', description: 'The build color')
                 ])
-        ]) 
-        echo "param value: ${DEPLOY_SHA}"
+        ])
+        print "param value: " + this.param.color
 //        def repo_maps = ns_pipeline.get_repo_map()
 //        echo "repo maps: ${repo_maps}"
     }
