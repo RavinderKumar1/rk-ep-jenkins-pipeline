@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger jenkins job
-        uses: jabbukka/jenkins-trigger@main
+        uses: estherk0/jenkins-trigger@1.0
         with:
           url: http://34.102.245.1
           job_name: rk-jenkins-shared-library-testing
