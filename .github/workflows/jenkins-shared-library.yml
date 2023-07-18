@@ -18,7 +18,7 @@ jobs:
       - name: Trigger jenkins job
         uses: joshlk/jenkins-githubaction@master
         with:
-          url: http://jenkins.rkdevops.me/
+          url: http://jenkins.rkdevops.me
           job_name: rk-jenkins-shared-library-testing
           username: ${{ secrets.JENKINS_USER }}
           api_token: ${{ secrets.JENKINS_TOKEN }}
