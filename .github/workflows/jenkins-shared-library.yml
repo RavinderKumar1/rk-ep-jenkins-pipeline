@@ -1,5 +1,3 @@
----
-
 name: jenkins-CI
 
 # Controls when the workflow will run
@@ -9,6 +7,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,10 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger jenkins job
-        uses: jabbukka/jenkins-trigger@main
+        uses: mickeygoussetorg/trigger-jenkins-job@v1
         with:
-          url: http://34.102.245.1
-          job_name: rk-jenkins-shared-library-testing
-          user_name: admin
-          api_token: ${{ secrets.JENKINS_TOKEN }}
-          timeout: "1000"
+          jenkins-server: http://34.102.245.1
+          jenkis-job: rk-jenkins-shared-library-testing
+          jenkins-username: admin
+          jenkins-pat: ${{ secrets.JENKINS_TOKEN }}
+          poll-time: 10
+          timeout-value: "100"
+          verbose: true
