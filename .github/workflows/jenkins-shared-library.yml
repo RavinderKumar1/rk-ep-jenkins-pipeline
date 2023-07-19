@@ -7,6 +7,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,10 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger jenkins job
-        uses: jabbukka/jenkins-trigger@main
+        uses: appleboy/jenkins-action@master
         with:
           url: http://34.102.245.1
-          job_name: rk-jenkins-shared-library-testing
-          user_name: admin
-          api_token: ${{ secrets.JENKINS_TOKEN }}
-          timeout: "1000"
+          job: rk-jenkins-shared-library-testing
+          user: admin
+          token: ${{ secrets.JENKINS_TOKEN }}
