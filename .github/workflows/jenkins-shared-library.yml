@@ -17,12 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger jenkins job
-        uses: mickeygoussetorg/trigger-jenkins-job@v1
+        uses: joshlk/jenkins-githubaction@master
         with:
-          jenkins-server: http://34.102.245.1
-          jenkins-job: rk-jenkins-shared-library-testing
-          jenkins-username: admin
-          jenkins-pat: ${{ secrets.JENKINS_TOKEN }}
-          poll-time: 10
-          timeout-value: "100"
-          verbose: true
+          url: http://34.102.245.1
+          job_name: rk-jenkins-shared-library-testing
+          username: admin
+          api_token: ${{ secrets.JENKINS_TOKEN }}
+          timeout: "100"
