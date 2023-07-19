@@ -17,9 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger jenkins job
-        uses: appleboy/jenkins-action@master
+        uses: joshlk/jenkins-githubaction@master
         with:
           url: http://34.102.245.1
-          job: rk-jenkins-shared-library-testing
-          user: admin
-          token: ${{ secrets.JENKINS_TOKEN }}
+          job_name: rk-jenkins-shared-library-testing
+          username: admin
+          api_token: ${{ secrets.JENKINS_TOKEN }}
+          timeout: "100"
