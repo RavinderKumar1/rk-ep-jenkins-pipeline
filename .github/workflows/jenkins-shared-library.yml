@@ -19,8 +19,7 @@ jobs:
       - name: Trigger jenkins job
         uses: joshlk/jenkins-githubaction@master
         with:
-          url: http://34.102.245.1
-          job_name: rk-jenkins-shared-library-testing
-          username: admin
-          api_token: ${{ secrets.JENKINS_TOKEN }}
-          timeout: "100"
+          jenkins-url: http://34.102.245.1
+          job-path: job/rk-jenkins-shared-library-testing
+          user: admin
+          jenkins-token: ${{ secrets.JENKINS_TOKEN }}
