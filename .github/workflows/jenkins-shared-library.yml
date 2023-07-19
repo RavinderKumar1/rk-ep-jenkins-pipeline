@@ -19,7 +19,7 @@ jobs:
       - name: Trigger jenkins job
         uses: GoldenspearLLC/build-jenkins-job@master
         with:
-          jenkins-url: http://34.102.245.1
+          jenkins-url: 34.102.245.1
           job-path: job/rk-jenkins-shared-library-testing
           user: admin
           jenkins-token: ${{ secrets.JENKINS_TOKEN }}
