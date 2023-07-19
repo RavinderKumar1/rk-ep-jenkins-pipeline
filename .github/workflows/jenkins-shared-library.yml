@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger jenkins job
-        uses: joshlk/jenkins-githubaction@master
+        uses: GoldenspearLLC/build-jenkins-job@master
         with:
           jenkins-url: http://34.102.245.1
           job-path: job/rk-jenkins-shared-library-testing
