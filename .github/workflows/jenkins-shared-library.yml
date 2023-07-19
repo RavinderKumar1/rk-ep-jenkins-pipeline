@@ -20,7 +20,7 @@ jobs:
         uses: mickeygoussetorg/trigger-jenkins-job@v1
         with:
           jenkins-server: http://34.102.245.1
-          jenkis-job: rk-jenkins-shared-library-testing
+          jenkins-job: rk-jenkins-shared-library-testing
           jenkins-username: admin
           jenkins-pat: ${{ secrets.JENKINS_TOKEN }}
           poll-time: 10
