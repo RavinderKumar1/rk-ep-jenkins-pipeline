@@ -33,7 +33,7 @@ void resetEnv(Map envs) {
     }
 }
 
-void showSummary() {
+void showSummary(final_summary) {
     int totalFail = 0
     int totalPass = 0
     for (fxn in final_summary) {
