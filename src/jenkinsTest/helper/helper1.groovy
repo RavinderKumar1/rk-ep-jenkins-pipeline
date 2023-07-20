@@ -1,4 +1,5 @@
 package jenkinsTest.helper
+@Library('ns_pipeline_library') _
 
 def dosomething() {
 	println("do something")
