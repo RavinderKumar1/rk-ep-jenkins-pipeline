@@ -4,7 +4,7 @@ def dosomething() {
 	println("do something")
 }
 
-//final_summary = []
+final_summary = []
 
 String passOrFail(actual, expected) {
     return (actual == expected) ? 'Pass' : 'Fail'
