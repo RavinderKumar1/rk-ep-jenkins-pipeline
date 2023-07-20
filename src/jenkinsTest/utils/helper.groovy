@@ -14,17 +14,23 @@ void logTestCase(String name, String description, String status, final_summary) 
     return final_summary
 }
 
-void setEnv(Map envs) {
-    envs.each { key, val ->
-        //println("Setting env ${key}:${val}")
-        env.setProperty(key, val)
+void setEnvIfRequired(Map test) {
+    if (test.containsKey('envInput')) {
+    	envs = test['envInput']
+    	envs.each { key, val ->
+        	//println("Setting env ${key}:${val}")
+        	env.setProperty(key, val)
+    	}
     }
 }
 
-void resetEnv(Map envs) {
-    envs.each { key, val ->
-        //println("Resetting env ${key}")
-        env.setProperty(key, '')
+void resetEnvIfRequired(Map test) {
+    if (test.containsKey('envInput')) {
+        envs = test['envInput']
+        envs.each { key, val ->
+                //println("Setting env ${key}:${val}")
+                env.setProperty(key, '')
+        }
     }
 }
 
