@@ -20,43 +20,6 @@ void logTestCase(String name, String description, String status) {
     final_summary.add(testSpecs)
 }
 
-def executeNsPipelineFunction(Object... arguments) {
-    argumentsList = []
-    String fxnName
-    def response = null
-
-    fxnName = arguments[0]
-    if (arguments.head() instanceof Map) {
-        // Still to implement if required Ref: https://gist.github.com/int128/a136eb262b8f3f8decfda23542645b77
-        println('Arguments ordering will be changed as last element is Map')
-    }
-    else {
-        if (arguments.length > 1) {
-            argumentsList = arguments[1..(arguments.length - 1)]
-            println('   Arguments:' + arguments)
-            println('   Function name is ' + fxnName)
-            println('   argumentsList:' + argumentsList)
-        }
-    }
-
-    try {
-        if (argumentsList.size() == 0) {
-            println("Executing Function: ${fxnName}()")
-            response = ns_pipeline."${fxnName}"()
-        }
-        else {
-            println("Executing Function: ${fxnName}(${argumentsList})")
-            response = ns_pipeline."${fxnName}"(argumentsList)
-        }
-    } catch (Exception e) {
-        println("Function: ${fxnName} failed with Exception: ${e}")
-        currentBuild.result = 'FAILURE'
-    }
-
-    //println("Function output is: " + response)
-    return response
-}
-
 void setEnv(Map envs) {
     envs.each { key, val ->
         //println("Setting env ${key}:${val}")
