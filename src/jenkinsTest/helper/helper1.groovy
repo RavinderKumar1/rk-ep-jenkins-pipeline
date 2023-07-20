@@ -4,19 +4,19 @@ def dosomething() {
 	println("do something")
 }
 
-final_summary = []
 
 String passOrFail(actual, expected) {
     return (actual == expected) ? 'Pass' : 'Fail'
 }
 
-void logTestCase(String name, String description, String status) {
+void logTestCase(String name, String description, String status, final_summary) {
     Map testSpecs = [:]
     testSpecs['name'] = name
     testSpecs['description'] = description
     testSpecs['status'] = status
     //println("Logging- ${name}:${description}:${status}")
     final_summary.add(testSpecs)
+    return final_summary
 }
 
 void setEnv(Map envs) {
