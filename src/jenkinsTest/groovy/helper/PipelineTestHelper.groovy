@@ -1,4 +1,4 @@
-package jenkinsTest.groovy.helpery
+package jenkinsTest.groovy.helper
 
 class PipelineTestHelper {
     void helperFunction() {
