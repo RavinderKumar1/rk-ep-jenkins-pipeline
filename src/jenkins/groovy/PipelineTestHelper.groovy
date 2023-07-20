@@ -1,7 +1,7 @@
 package jenkins.groovy
 
 class PipelineTestHelper {
-    void helperFunction() {
+    def helperFunction() {
         println('Calling helper function from PipelineTestHelper')
     }
 }
