@@ -1,9 +1,4 @@
-package jenkinsTest.helper
-
-def dosomething() {
-	println("do something")
-}
-
+package jenkinsTest.utils
 
 String passOrFail(actual, expected) {
     return (actual == expected) ? 'Pass' : 'Fail'
