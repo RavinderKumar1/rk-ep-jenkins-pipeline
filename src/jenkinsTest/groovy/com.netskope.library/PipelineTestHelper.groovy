@@ -1,4 +1,4 @@
-package test.groovy
+package com.netskope.library
 
 class PipelineTestHelper {
     void helperFunction() {
