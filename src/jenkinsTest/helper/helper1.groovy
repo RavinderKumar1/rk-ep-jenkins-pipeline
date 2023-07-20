@@ -1,7 +1,7 @@
 package jenkinsTest.helper
 
 def dosomething() {
-	println("do something"
+	println("do something")
 }
 
 return this
