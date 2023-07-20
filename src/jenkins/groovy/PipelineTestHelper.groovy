@@ -1,7 +1,7 @@
 package jenkins.groovy
 
 def obj
-class PipelineTestHelper {
+class PipelineTestHelper implements Serializable {
     def helperFunction() {
         println('Calling helper function from PipelineTestHelper')
     }
