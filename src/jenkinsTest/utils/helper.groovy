@@ -1,4 +1,5 @@
 package jenkinsTest.utils
+import groovy.json.JsonSlurperClassic
 
 String passOrFail(actual, expected) {
     return (actual == expected) ? 'Pass' : 'Fail'
@@ -16,11 +17,10 @@ void logTestCase(String name, String description, String status, final_summary) 
 
 void setEnvIfRequired(Map test) {
     if (test.containsKey('envInput')) {
-    	envs = test['envInput']
-    	envs.each { key, val ->
-        	//println("Setting env ${key}:${val}")
-        	env.setProperty(key, val)
-    	}
+        envs = test['envInput']
+        envs.each { key, val ->
+            env.setProperty(key, val)
+        }
     }
 }
 
@@ -28,10 +28,19 @@ void resetEnvIfRequired(Map test) {
     if (test.containsKey('envInput')) {
         envs = test['envInput']
         envs.each { key, val ->
-                //println("Setting env ${key}:${val}")
-                env.setProperty(key, '')
+            env.setProperty(key, '')
         }
     }
+}
+
+@NonCPS
+def jsonParse(def json) {
+    new groovy.json.JsonSlurperClassic().parseText(json)
+}
+
+void loadTestCaseFile(Map config = [:]) {
+    def testCasecontents = libraryResource "com/netskope/jenkinsTest/${config.name}"
+    writeFile file: "${config.name}", text: testCasecontents
 }
 
 void showSummary(final_summary) {
@@ -45,14 +54,16 @@ void showSummary(final_summary) {
             totalFail += 1
         }
     }
+
+    final_summary.eachWithIndex { fxn, index ->
+        println("${index + 1}.${fxn['name']}:${fxn['description']}:${fxn['status']}")
+    }
+    println('*******' * 10)
     println('Final Summary')
     println('Total Test Cases run:' + final_summary.size())
     println('Test Cases Passed:' + totalPass)
     println('Test Cases Failed:' + totalFail)
 
-    final_summary.eachWithIndex { fxn, index ->
-        println("${index + 1}.${fxn['name']}:${fxn['description']}:${fxn['status']}")
-    }
     if (totalFail > 0 ) {
         println('There are failed test cases. Hence, marking this job as failure')
         currentBuild.result = 'FAILURE'
@@ -61,3 +72,4 @@ void showSummary(final_summary) {
 
 
 return this
+
