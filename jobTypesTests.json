@@ -1,0 +1,95 @@
+{
+    "is_develop_job": [
+        {
+            "description": "Should return true by default",
+            "expectedStatus": true
+        },
+        {
+            "description": "Should return false for RELEASE_BRANCH=RELEASE78",
+            "envInput": {
+                "RELEASE_BRANCH": "RELEASE78"
+            },
+            "expectedStatus": false
+        }
+    ],
+    "is_release_job": [
+        {
+            "description": "By default job should not be release_job",
+            "expectedStatus": false
+        }
+    ],
+    "is_hotfix_job": [
+        {
+            "description": "Should return false by default",
+            "expectedStatus": false
+        },
+        {
+            "description": "Should return false for BUILD_TAG=106.5.0",
+            "envInput": {
+                "RELEASE_BRANCH": "RELEASE78",
+                "BUILD_TAG": "106.5.0"
+            },
+            "expectedStatus": true
+        }
+    ],
+    "is_fedramp_job": [
+        {
+            "description": "Should return false by default",
+            "expectedStatus": false
+        },
+        {
+            "description": "Should return true for JOB_NAME=myfedrampjob",
+            "envInput": {
+                "JOB_NAME": "myfedrampjob"
+            },
+            "expectedStatus": true
+        },
+        {
+            "description": "Should return true for JOB_NAME=myfipsjob",
+            "envInput": {
+                "JOB_NAME": "myfipsjob"
+            },
+            "expectedStatus": true
+        }
+    ],
+    "is_pre94_branch": [
+        {
+            "description": "Should return false by default",
+            "expectedStatus": false
+        },
+        {
+            "description": "Should return true for RELEASE_BRANCH=RELEASE10",
+            "envInput": {
+                "RELEASE_BRANCH": "RELEASE10"
+            },
+            "expectedStatus": true
+        },
+        {
+            "description": "Should return false for RELEASE_BRANCH=RELEASE95",
+            "envInput": {
+                "RELEASE_BRANCH": "RELEASE95"
+            },
+            "expectedStatus": false
+        }
+    ],
+    "is_pre89_branch": [
+        {
+            "description": "Should return false by default",
+            "expectedStatus": false
+        },
+        {
+            "description": "Should return true for RELEASE_BRANCH=RELEASE10",
+            "envInput": {
+                "RELEASE_BRANCH": "RELEASE10"
+            },
+            "expectedStatus": true
+        },
+        {
+            "description": "Should return false for RELEASE_BRANCH=RELEASE90",
+            "envInput": {
+                "RELEASE_BRANCH": "RELEASE90"
+            },
+            "expectedStatus": false
+        }
+    ]
+}

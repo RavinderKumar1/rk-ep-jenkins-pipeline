@@ -1,0 +1,15 @@
+{
+    "get_default_artifactory": [
+        {
+            "description": "Should return true by default",
+            "expectedStatus": "artifactory"
+        },
+        {
+            "description": "Should be able to override the artifactory",
+            "envInput": {
+                "DEFAULT_ARTIFACTORY": "OVERRIDDEN_ARTIFACTORY"
+            },
+            "expectedStatus": "OVERRIDDEN_ARTIFACTORY"
+        }
+    ]
+}

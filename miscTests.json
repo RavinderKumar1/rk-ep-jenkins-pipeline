@@ -1,0 +1,8 @@
+{
+    "eval_branch_name": [
+        {
+            "description": "Should return branch_name by default",
+            "expectedStatus": true
+        }
+    ]
+}
